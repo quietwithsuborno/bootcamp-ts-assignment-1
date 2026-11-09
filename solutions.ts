@@ -23,3 +23,12 @@ function processInput(value: string | number | boolean): string | number{
         }
     }
 }
+
+
+function formatCoordinate(location: readonly [number, number, string] ): string{
+    const latitude = location[0]
+    const longitude = location[1]
+    const locationName = location[2]
+
+    return `Location: ${locationName} (${latitude}, ${longitude})`
+}
