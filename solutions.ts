@@ -78,3 +78,19 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[]{
 
     return validCourses
 }
+
+
+
+function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][]{
+
+    const pluckValuesArray: T[K][] = []
+    
+    for (const item of items){
+        pluckValuesArray.push(item[key])
+    }
+
+    return pluckValuesArray
+}
+
+
+
