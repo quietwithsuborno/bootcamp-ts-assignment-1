@@ -10,6 +10,7 @@ function multiplyValue(value: number, multiplier?: number): number{
 }
 
 
+
 function processInput(value: string | number | boolean): string | number{
     
     if(typeof value === "string"){
@@ -30,6 +31,7 @@ function processInput(value: string | number | boolean): string | number{
     }
     
 }
+
 
 
 function formatCoordinate(location: readonly [number, number, string] ): string{
@@ -54,4 +56,25 @@ function concatenateArrays<T>(...arrays: T[][]): T[]{
     }
 
     return combinedArray
+}
+
+
+
+interface Course {
+    title: string;
+    students: number;
+    isPublished: boolean;
+}
+
+function getPopularCourses(courses: Course[], minStudents: number): Course[]{
+
+    const validCourses: Course[] = []
+
+    for (const course of courses){
+        if(course.isPublished && course.students >= minStudents){
+            validCourses.push(course)
+        }
+    }
+
+    return validCourses
 }
